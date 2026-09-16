@@ -1,0 +1,7 @@
+# Cloudflare / vinext build output and local tool state.
+dist
+.wrangler
+.vinext
+.sites-runtime
+outputs
+work
