@@ -16,9 +16,10 @@ export function ArrangementCard({
       <div className="product-image">
         <Image
           src={p.image}
-          alt={p.description}
+          alt={p.name}
           fill
           sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 30vw"
+          className="object-cover"
         />
         <span className="product-tag">{p.tag}</span>
         <Link

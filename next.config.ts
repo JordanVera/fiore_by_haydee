@@ -2,6 +2,10 @@ import type {NextConfig} from 'next';
 
 const config: NextConfig = {
   agentRules: false,
+  // Serve public/ assets directly — avoids Vercel optimizer failures on local JPEGs.
+  images: {
+    unoptimized: true,
+  },
   async redirects() {
     return [
       {source: '/shop', destination: '/flowers', permanent: true},

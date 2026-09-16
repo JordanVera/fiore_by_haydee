@@ -105,7 +105,9 @@ export default function Home() {
               fill
               priority={i === 0}
               sizes="(max-width: 760px) 100vw, 50vw"
-              className={slide === i ? 'hero-frame visible' : 'hero-frame'}
+              className={
+                slide === i ? 'hero-frame visible object-cover' : 'hero-frame object-cover'
+              }
             />
           ))}
           <div className="photo-caption">
@@ -178,6 +180,7 @@ export default function Home() {
             alt="Seasonal flowers in an independent floral studio"
             fill
             sizes="(max-width:760px) 100vw, 50vw"
+            className="object-cover"
           />
         </div>
         <div className="story-copy">

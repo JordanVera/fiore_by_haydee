@@ -23,12 +23,14 @@ export function Header() {
         <span>A little beauty, right to your door.</span>
       </div>
       <header className="header">
-        <Link href="/" className="brand" aria-label={c.businessName + ' home'}>
+        <Link href="/" className="brand-logo" aria-label={c.businessName + ' home'}>
           <Image
             src="/logo.png"
             alt={c.businessName}
-            width={100}
-            height={100}
+            width={631}
+            height={261}
+            priority
+            className="brand-mark"
           />
         </Link>
         <nav className={open ? 'nav open' : 'nav'} aria-label="Main navigation">
@@ -66,12 +68,13 @@ export function Footer() {
     <footer>
       <div className="footer-grid">
         <div>
-          <Link href="/">
+          <Link href="/" className="brand-logo">
             <Image
               src="/logo.png"
               alt={c.businessName}
-              width={160}
-              height={160}
+              width={631}
+              height={261}
+              className="brand-mark brand-mark-footer"
             />
           </Link>
           <p>
