@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root="$(cd "$(dirname "$0")" && pwd)"
+
+if [[ -f "${root}/node_modules/pnpm/bin/pnpm.mjs" ]]; then
+  exec node "${root}/node_modules/pnpm/bin/pnpm.mjs" "$@"
+fi
+
+for candidate in \
+  "${HOME}/.node/corepack/pnpm/11.25.0/bin/pnpm.mjs" \
+  "${HOME}/.local/share/corepack/pnpm/11.25.0/bin/pnpm.mjs"; do
+  if [[ -f "${candidate}" ]]; then
+    exec node "${candidate}" "$@"
+  fi
+done
+
+echo "pnpm is unavailable. Install dependencies with: npm install" >&2
+echo "Or fix Corepack with: corepack disable && npm install -g pnpm@11.25.0" >&2
+exit 1

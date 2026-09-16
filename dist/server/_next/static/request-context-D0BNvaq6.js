@@ -1,0 +1,1 @@
+import{t as e}from"./parse-cookie-BlcZ7X1q.js";function t(t){return e(t)}function n(e,t){return(e??t).split(`:`,1)[0].toLowerCase()}function r(e){let r=new URL(e.url),i,a;return{headers:e.headers,get cookies(){return i??=t(e.headers.get(`cookie`))},get query(){return a??=r.searchParams},host:n(e.headers.get(`host`),r.hostname)}}export{t as n,r,n as t};

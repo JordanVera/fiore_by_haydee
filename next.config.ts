@@ -1,15 +1,15 @@
-import type { NextConfig } from 'next';
+import type {NextConfig} from 'next';
 
-const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**',
-      },
-    ],
+const config: NextConfig = {
+  agentRules: false,
+  async redirects() {
+    return [
+      {source: '/shop', destination: '/flowers', permanent: true},
+      {source: '/cart', destination: '/contact', permanent: true},
+      {source: '/order-confirmation', destination: '/contact', permanent: true},
+      {source: '/admin', destination: '/', permanent: true},
+    ];
   },
 };
 
-export default nextConfig;
+export default config;
