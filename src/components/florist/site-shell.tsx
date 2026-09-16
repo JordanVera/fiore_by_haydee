@@ -66,8 +66,13 @@ export function Footer() {
     <footer>
       <div className="footer-grid">
         <div>
-          <Link href="/" className="brand">
-            fiore<span>BY HAYDEE</span>
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt={c.businessName}
+              width={160}
+              height={160}
+            />
           </Link>
           <p>
             Locally rooted. Lovingly arranged.
